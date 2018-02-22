@@ -73,7 +73,7 @@ entity aatank is
 	port (X4,X3,X2,X1,X0,clk,reset: in std_logic ; Wterror: out std_logic);
 end entity;
 architecture aatankwadi of aatank is
-signal q2,q1,q0,nq2,nq1,nq0,t,e,r,o,qq1,qq2,qq0 : std_logic;
+signal q2,q1,q0,nq2,nq1,nq0,t,e,r,o,qq1,qq2,qq0,tt,ee,rr,oo : std_logic;
 begin
 	qq1 <= not(q1);
 	qq2 <= not(q2);
@@ -82,9 +82,13 @@ begin
 	e <= ( not(X4) AND not(X3) AND X2 AND not(X1) AND X0);
 	r <= ( X4 AND not(X3) AND not(X2) AND X1 AND not(X0));
 	o <= ( not(X4) AND X3 AND X2 AND X1 AND X0);
-	nq0 <= (qq2 and qq1 and qq0 and t) or (qq2 and q1 and qq0 and r) or (q2 and q1 and qq0 and o);
-	nq1 <= (qq2 and qq1 and q0 and e) or (q2 and qq1 and q0 and r) or (q2 and q1 and qq0 and o);
-	nq2 <= (qq2 and q1 and qq0 and r) or (q2 and qq1 and q0 and r) or (q2 and q1 and qq0 and o);
+	ee <= not(e);
+	tt <= not(t);
+	oo <= not(o);
+	rr <= not(r);
+	nq0 <= (qq2 and qq1 and qq0 and t) or (qq2 and q1 and qq0 and r) or (q2 and q1 and qq0 and o) or (qq2 and qq1 and q0 and ee) or (q2 and 		qq1 and q0 and rr) or (q2 and q1 and q0 and rr);
+	nq1 <= (qq2 and qq1 and q0 and e) or (qq2 and q1 and qq0 and rr) or (q2 and qq1 and q0 ) or (q2 and q1 and qq0 and o) or (q2 and q1 and q0 			and rr);
+	nq2 <= (qq2 and q1 and qq0 and r) or (q2 and qq1 and q0) or (q2 and q1 and qq0) or (q1 and q2 and q0 and rr);
  	Wterror <= q2 and q1 and q0 and r;
 	dff1 : DFF port map ( D => nq1 , CLK => clk , Q => q1);
 	dff2 : DFF port map ( D => nq0 , CLK => clk , Q => q0);  
@@ -101,7 +105,7 @@ entity chaku is
 	port (X4,X3,X2,X1,X0,clk,reset: in std_logic ; Wknife: out std_logic);
 end entity;
 architecture churra of chaku is
-signal q2,q1,q0,nq2,nq1,nq0,k,n,i,f,e,qq1,qq2,qq0 : std_logic;
+signal q2,q1,q0,nq2,nq1,nq0,k,n,i,f,e,qq1,qq2,qq0,kk,nn,ii,ff,ee : std_logic;
 begin
 	qq1 <= not(q1);
 	qq2 <= not(q2);
@@ -111,9 +115,14 @@ begin
 	i <= ( not(X4) AND X3 AND not(X2) AND not(X1) AND X0);
 	f <= ( not(X4) AND not(X3) AND X2 AND X1 AND not(X0));
 	e <= ( not(X4) AND not(X3) AND X2 AND not(X1) AND X0);
-	nq0 <= (qq2 and qq1 and qq0 and k) or (qq2 and qq1 and q0 and n) or (qq2 and q1 and q0 and i);
-	nq1 <= (qq2 and qq1 and q0 and n) or (qq2 and q1 and q0 and i) or (q2 and q1 and q0 and f);
-	nq2 <= (qq2 and q1 and q0 and i) or (q2 and q1 and q0 and f);
+	kk <= not(k);
+	nn <= not(n);
+	ii <= not(i);
+	ff <= not(f);
+	ee <= not(e);
+	nq0 <= (qq2 and qq1 and qq0 and k) or (qq2 and qq1 and q0) or (qq2 and q1 and q0) or (q1 and q2 and q0 and ff);
+	nq1 <= (qq2 and qq1 and q0 and n) or (qq2 and q1 and q0 ) or (q2 and q1 and q0) or (q1 and q2 and qq0 and ee);
+	nq2 <= (qq2 and q1 and q0 and i) or (q2 and q1 and q0) or (q1 and q2 and qq0 and ee);
  	Wknife <= (q2 and q1 and qq0 and e);
 	dff1 : DFF port map ( D => nq1 , CLK => clk , Q => q1);
 	dff2 : DFF port map ( D => nq0 , CLK => clk , Q => q0);  
@@ -130,15 +139,18 @@ entity dhamaka is
 	port (X4,X3,X2,X1,X0,clk,reset: in std_logic ; Wbomb: out std_logic);
 end entity;
 architecture boom of dhamaka is
-signal q1,q0,nq1,nq0,b,o,m,qq1,qq0 : std_logic;
+signal q1,q0,nq1,nq0,b,o,m,qq1,qq0,bb,oo,mm : std_logic;
 begin
 	qq1 <= not(q1);
 	qq0 <= not(q0);
 	b <= (not(X4) and not(X3) and not(X2) and X1 and not(X0));
 	o <= ( not(X4) AND X3 AND X2 AND X1 AND X0);
 	m <= (not(X4) and X3 and X2 and not(X1) and X0);
-	nq1 <= (qq1 and q0 and o) or (q1 and q0 and m);
-	nq0 <= (qq1 and qq0 and b) or (qq1 and q0 and o);
+	bb <= not(b);
+	oo <= not(o);
+	mm <= not(m);
+	nq1 <= (qq1 and q0 and o) or (q1 and q0) or (q1 and qq0 and bb) ;
+	nq0 <= (qq1 and qq0 and b) or (qq1 and q0) or (q1 and q0 and mm);
 	Wbomb <= (q1 and qq0 and b);
 	dff1 : DFF port map ( D => nq1 , CLK => clk , Q => q1);
 	dff2 : DFF port map ( D => nq0 , CLK => clk , Q => q0); 
