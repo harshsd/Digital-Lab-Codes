@@ -3,7 +3,7 @@ use std.standard.all;
 library ieee;
 use ieee.std_logic_1164.all;
 package harsh is
-	component DFF is
+	component D_FF is
 		port (D, CLK: in std_logic; Q: out std_logic);
 	end component;
 	component banduk is
@@ -26,10 +26,10 @@ library std;
 use std.standard.all;
 library ieee;
 use ieee.std_logic_1164.all;
-entity DFF is
+entity D_FF is
   port (D, CLK: in std_logic; Q: out std_logic);
 end entity;
-architecture WhatDoYouCare of DFF is
+architecture WhatDoYouCare of D_FF is
 begin 
    process (CLK) 
    	begin
@@ -59,8 +59,8 @@ begin
 	nq1 <= (((not(q1) and not(q0) and g) or (q1 and not(q0) and not(u))) and not(reset));
 	nq0 <= (((q1 and not(q0) and u) or (not(q1) and q0 and not(n))) and not(reset));
 	Wgun <= ( not(q1) and q0 and n);
-	dff1 : DFF port map ( D => nq1 , CLK => clk , Q => q1);
-	dff2 : DFF port map ( D => nq0 , CLK => clk , Q => q0); 
+	D_FF1 : D_FF port map ( D => nq1 , CLK => clk , Q => q1);
+	D_FF2 : D_FF port map ( D => nq0 , CLK => clk , Q => q0); 
 end goli; 
 
 library work;
@@ -91,9 +91,9 @@ begin
 	nq1 <= (((qq2 and qq1 and q0 and e) or (qq2 and q1 and qq0 and rr) or (q2 and qq1 and q0 and r) or (q2 and q1 and qq0) or (q2 and q1 and q0 and rr)) and not(reset));
 	nq2 <= (((qq2 and q1 and qq0 and r) or (q2 and qq1 and q0) or (q2 and q1 and qq0) or (q1 and q2 and q0 and rr)) and not(reset));
  	Wterror <= q2 and q1 and q0 and r;
-	dff1 : DFF port map ( D => nq1 , CLK => clk , Q => q1);
-	dff2 : DFF port map ( D => nq0 , CLK => clk , Q => q0);  
-	dff3 : DFF port map ( D => nq2 , CLK => clk , Q => q2);
+	D_FF1 : D_FF port map ( D => nq1 , CLK => clk , Q => q1);
+	D_FF2 : D_FF port map ( D => nq0 , CLK => clk , Q => q0);  
+	D_FF3 : D_FF port map ( D => nq2 , CLK => clk , Q => q2);
 end aatankwadi;
 
 library work;
@@ -125,9 +125,9 @@ begin
 	nq1 <= (((qq2 and qq1 and q0 and n) or (qq2 and q1 and q0 ) or (q2 and q1 and q0) or (q1 and q2 and qq0 and ee)) and not(reset));
 	nq2 <= (((qq2 and q1 and q0 and i) or (q2 and q1 and q0) or (q1 and q2 and qq0 and ee)) and not(reset));
  	Wknife <= (q2 and q1 and qq0 and e);
-	dff1 : DFF port map ( D => nq1 , CLK => clk , Q => q1);
-	dff2 : DFF port map ( D => nq0 , CLK => clk , Q => q0);  
-	dff3 : DFF port map ( D => nq2 , CLK => clk , Q => q2);
+	D_FF1 : D_FF port map ( D => nq1 , CLK => clk , Q => q1);
+	D_FF2 : D_FF port map ( D => nq0 , CLK => clk , Q => q0);  
+	D_FF3 : D_FF port map ( D => nq2 , CLK => clk , Q => q2);
 end churra;
 
 library work;
@@ -153,8 +153,8 @@ begin
 	nq1 <= (((qq1 and q0 and o) or (q1 and q0) or (q1 and qq0 and bb)) and not(reset));
 	nq0 <= (((qq1 and qq0 and b) or (qq1 and q0) or (q1 and q0 and mm)) and not(reset));
 	Wbomb <= (q1 and qq0 and b);
-	dff1 : DFF port map ( D => nq1 , CLK => clk , Q => q1);
-	dff2 : DFF port map ( D => nq0 , CLK => clk , Q => q0); 
+	D_FF1 : D_FF port map ( D => nq1 , CLK => clk , Q => q1);
+	D_FF2 : D_FF port map ( D => nq0 , CLK => clk , Q => q0); 
 end boom;
 
 library work;
@@ -167,7 +167,7 @@ entity StringRecognizer is
  port(X4,X3,X2,X1,X0: in std_logic; W: out std_logic; clk,reset: in std_logic);
 end entity StringRecognizer;
 architecture behave of StringRecognizer is
-signal master_reset , Wterror , Wbomb, Wgun , Wknife : std_logic;
+signal Wterror , Wbomb, Wgun , Wknife : std_logic;
 --signal q2,q1,q0 : std_logic;
 begin
 	str1 : dhamaka port map (X4 => X4 , X3 => X3 , X2 => X2 , X1 => X1 , X0 => X0 , clk => clk , reset => reset , Wbomb => Wbomb);
