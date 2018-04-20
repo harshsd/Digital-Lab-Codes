@@ -1,0 +1,365 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'reset'
+Slack : -9.828
+TNS   : -476.902
+
+Type  : Setup 'D_FFp:dffg|Q'
+Slack : -6.525
+TNS   : -57.569
+
+Type  : Setup 'modten:\random:5:m10|modtwo:mt|outclk'
+Slack : -1.735
+TNS   : -4.462
+
+Type  : Setup 'modten:\random:2:m10|modtwo:mt|outclk'
+Slack : -1.727
+TNS   : -4.453
+
+Type  : Setup 'modten:\random:3:m10|modtwo:mt|outclk'
+Slack : -1.717
+TNS   : -4.924
+
+Type  : Setup 'modten:\random:1:m10|modtwo:mt|outclk'
+Slack : -1.705
+TNS   : -4.620
+
+Type  : Setup 'modten:\random:4:m10|modtwo:mt|outclk'
+Slack : -1.705
+TNS   : -4.620
+
+Type  : Setup 'modten:\random:6:m10|modtwo:mt|outclk'
+Slack : -1.687
+TNS   : -4.860
+
+Type  : Setup 'inclk'
+Slack : -1.535
+TNS   : -5.794
+
+Type  : Setup 'modten:\random:0:m10|modtwo:mt|outclk'
+Slack : -1.485
+TNS   : -4.216
+
+Type  : Setup 'modten:\random:0:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.540
+TNS   : 0.000
+
+Type  : Setup 'modten:\random:1:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.563
+TNS   : 0.000
+
+Type  : Setup 'modten:\random:2:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.818
+TNS   : 0.000
+
+Type  : Setup 'modten:\random:5:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.818
+TNS   : 0.000
+
+Type  : Setup 'modten:\random:6:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.824
+TNS   : 0.000
+
+Type  : Setup 'modten:\random:4:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 1.189
+TNS   : 0.000
+
+Type  : Setup 'modten:\random:3:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 1.539
+TNS   : 0.000
+
+Type  : Setup 'switch1'
+Slack : 3.540
+TNS   : 0.000
+
+Type  : Hold 'switch1'
+Slack : -3.594
+TNS   : -3.594
+
+Type  : Hold 'modten:\random:0:m10|modtwo:mt|outclk'
+Slack : -3.408
+TNS   : -9.605
+
+Type  : Hold 'inclk'
+Slack : -1.777
+TNS   : -5.317
+
+Type  : Hold 'modten:\random:3:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -1.593
+TNS   : -1.593
+
+Type  : Hold 'modten:\random:4:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -1.243
+TNS   : -1.243
+
+Type  : Hold 'modten:\random:6:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -0.878
+TNS   : -0.878
+
+Type  : Hold 'modten:\random:2:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -0.872
+TNS   : -0.872
+
+Type  : Hold 'modten:\random:5:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -0.872
+TNS   : -0.872
+
+Type  : Hold 'modten:\random:1:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -0.617
+TNS   : -0.617
+
+Type  : Hold 'modten:\random:0:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -0.594
+TNS   : -0.594
+
+Type  : Hold 'modten:\random:2:m10|modtwo:mt|outclk'
+Slack : -0.461
+TNS   : -0.461
+
+Type  : Hold 'modten:\random:5:m10|modtwo:mt|outclk'
+Slack : -0.461
+TNS   : -0.461
+
+Type  : Hold 'modten:\random:1:m10|modtwo:mt|outclk'
+Slack : -0.241
+TNS   : -0.652
+
+Type  : Hold 'modten:\random:4:m10|modtwo:mt|outclk'
+Slack : -0.241
+TNS   : -0.637
+
+Type  : Hold 'modten:\random:3:m10|modtwo:mt|outclk'
+Slack : -0.086
+TNS   : -0.177
+
+Type  : Hold 'reset'
+Slack : 0.651
+TNS   : 0.000
+
+Type  : Hold 'D_FFp:dffg|Q'
+Slack : 1.029
+TNS   : 0.000
+
+Type  : Hold 'modten:\random:6:m10|modtwo:mt|outclk'
+Slack : 1.679
+TNS   : 0.000
+
+Type  : Recovery 'modten:\random:3:m10|modtwo:mt|outclk'
+Slack : -2.981
+TNS   : -8.943
+
+Type  : Recovery 'modten:\random:2:m10|modtwo:mt|outclk'
+Slack : -2.941
+TNS   : -8.823
+
+Type  : Recovery 'modten:\random:0:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -2.922
+TNS   : -2.922
+
+Type  : Recovery 'modten:\random:1:m10|modtwo:mt|outclk'
+Slack : -2.919
+TNS   : -8.757
+
+Type  : Recovery 'modten:\random:5:m10|modtwo:mt|outclk'
+Slack : -2.665
+TNS   : -7.995
+
+Type  : Recovery 'modten:\random:4:m10|modtwo:mt|outclk'
+Slack : -2.649
+TNS   : -7.947
+
+Type  : Recovery 'modten:\random:6:m10|modtwo:mt|outclk'
+Slack : -2.648
+TNS   : -7.944
+
+Type  : Recovery 'modten:\random:2:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -2.573
+TNS   : -2.573
+
+Type  : Recovery 'modten:\random:1:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -2.552
+TNS   : -2.552
+
+Type  : Recovery 'modten:\random:5:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -2.297
+TNS   : -2.297
+
+Type  : Recovery 'modten:\random:6:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -2.277
+TNS   : -2.277
+
+Type  : Recovery 'reset'
+Slack : -2.169
+TNS   : -16.463
+
+Type  : Recovery 'modten:\random:3:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -1.892
+TNS   : -1.892
+
+Type  : Recovery 'modten:\random:4:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : -1.656
+TNS   : -1.656
+
+Type  : Recovery 'D_FFp:dffg|Q'
+Slack : -1.472
+TNS   : -11.592
+
+Type  : Recovery 'inclk'
+Slack : -1.081
+TNS   : -4.324
+
+Type  : Recovery 'modten:\random:0:m10|modtwo:mt|outclk'
+Slack : -0.874
+TNS   : -2.622
+
+Type  : Recovery 'switch1'
+Slack : -0.725
+TNS   : -0.725
+
+Type  : Removal 'reset'
+Slack : 0.558
+TNS   : 0.000
+
+Type  : Removal 'switch1'
+Slack : 0.671
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:0:m10|modtwo:mt|outclk'
+Slack : 0.820
+TNS   : 0.000
+
+Type  : Removal 'D_FFp:dffg|Q'
+Slack : 0.843
+TNS   : 0.000
+
+Type  : Removal 'inclk'
+Slack : 1.027
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:4:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 1.602
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:3:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 1.838
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:6:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 2.223
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:5:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 2.243
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:1:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 2.498
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:2:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 2.519
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:6:m10|modtwo:mt|outclk'
+Slack : 2.594
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:4:m10|modtwo:mt|outclk'
+Slack : 2.595
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:5:m10|modtwo:mt|outclk'
+Slack : 2.611
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:1:m10|modtwo:mt|outclk'
+Slack : 2.865
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:0:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 2.868
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:2:m10|modtwo:mt|outclk'
+Slack : 2.887
+TNS   : 0.000
+
+Type  : Removal 'modten:\random:3:m10|modtwo:mt|outclk'
+Slack : 2.927
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'inclk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'reset'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'switch1'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'D_FFp:dffg|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:0:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:0:m10|modtwo:mt|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:1:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:1:m10|modtwo:mt|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:2:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:2:m10|modtwo:mt|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:3:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:3:m10|modtwo:mt|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:4:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:4:m10|modtwo:mt|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:5:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:5:m10|modtwo:mt|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:6:m10|modfive:mf|D_FFn:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modten:\random:6:m10|modtwo:mt|outclk'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

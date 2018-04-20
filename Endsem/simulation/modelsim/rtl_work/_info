@@ -1,0 +1,218 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/harsh/Desktop/Endsem/simulation/modelsim
+Ed_ffn
+Z1 w1524254818
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 DPx4 work 5 harsh 0 22 62?W4?0BM>mR@R?iP:b6:2
+R0
+Z5 8/home/harsh/Desktop/Endsem/Practice.vhdl
+Z6 F/home/harsh/Desktop/Endsem/Practice.vhdl
+l0
+L76
+V`@cjkhREzR8zV`]TAK`=C3
+!s100 AWM[e8Vf;`7g]^MRkT`JY1
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1524254851
+!i10b 1
+Z9 !s108 1524254851.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/harsh/Desktop/Endsem/Practice.vhdl|
+Z11 !s107 /home/harsh/Desktop/Endsem/Practice.vhdl|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Awhatdoyoucare
+R2
+R3
+R4
+DEx4 work 5 d_ffn 0 22 `@cjkhREzR8zV`]TAK`=C3
+l80
+L79
+VGGeNOOOceCz__H9=Y9klh1
+!s100 zMdWND@ab;=16I>C^YZAn1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ed_ffp
+R1
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L55
+V7c@:KB^n@A<4mDhgS]iKF0
+!s100 [B;ZjYkNLfB7Q>8n6d=m63
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Awhatdoyoucare
+R2
+R3
+R4
+DEx4 work 5 d_ffp 0 22 7c@:KB^n@A<4mDhgS]iKF0
+l59
+L58
+VAc^GHX7zZ>fnB9f[bXYZ60
+!s100 E;MObA]_3TaVm9IGC[Yl81
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Pharsh
+R2
+R3
+R1
+R0
+R5
+R6
+l0
+L5
+V62?W4?0BM>mR@R?iP:b6:2
+!s100 DGgO57_eaH[a9k=92;2Zh3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emodfive
+R1
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L97
+VJf_^YkY<A^d]lM0Q3mzn33
+!s100 c9QajYCUD?bNfzgGBDY>C1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Apaach
+R2
+R3
+R4
+DEx4 work 7 modfive 0 22 Jf_^YkY<A^d]lM0Q3mzn33
+l102
+L100
+VdWg[Piln7@^zWK<U`Q:Am1
+!s100 XE;]iT92`]<9BNH5>li343
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emodtwo
+R1
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L121
+VO6YNP=o4IGG4V=?3BiLYR3
+!s100 WC^mYKQ51onV7lig9ozJB2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ado
+R2
+R3
+R4
+DEx4 work 6 modtwo 0 22 O6YNP=o4IGG4V=?3BiLYR3
+l126
+L124
+V[AddNN3Q>@edCZi=mkGnc2
+!s100 SJ@>APSEBIXTmO4E1a4`<1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Epractice
+R1
+DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L145
+Vc[ch5GMZ^d:@;fcZzooZ51
+!s100 ;[>A5X_R7fjK4WXEoP80J1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

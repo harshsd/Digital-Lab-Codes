@@ -1,0 +1,496 @@
+Analysis & Synthesis report for Practice
+Sat Apr 21 03:36:42 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Practice|lcd_controller:display|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "lcd_controller:display"
+ 14. Port Connectivity Checks: "DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad11"
+ 15. Port Connectivity Checks: "DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad1"
+ 16. Port Connectivity Checks: "DelayAdder:timecalc|elevenbitadder:add1"
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Apr 21 03:36:42 2018       ;
+; Quartus Prime Version       ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name               ; Practice                                    ;
+; Top-level Entity Name       ; Practice                                    ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 201                                         ;
+; Total pins                  ; 29                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; Practice           ; Practice           ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
+; Practice.vhdl                    ; yes             ; User VHDL File  ; /home/harsh/Desktop/Endsem/Practice.vhdl ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 201   ;
+;     -- Combinational with no register       ; 73    ;
+;     -- Register only                        ; 18    ;
+;     -- Combinational with a register        ; 110   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 50    ;
+;     -- 3 input functions                    ; 31    ;
+;     -- 2 input functions                    ; 75    ;
+;     -- 1 input functions                    ; 27    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 170   ;
+;     -- arithmetic mode                      ; 31    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 36    ;
+;     -- asynchronous clear/load mode         ; 59    ;
+;                                             ;       ;
+; Total registers                             ; 128   ;
+; Total logic cells in carry chains           ; 32    ;
+; I/O pins                                    ; 29    ;
+; Maximum fan-out node                        ; reset ;
+; Maximum fan-out                             ; 79    ;
+; Total fan-out                               ; 787   ;
+; Average fan-out                             ; 3.42  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                             ;
++----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node       ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                     ; Entity Name    ; Library Name ;
++----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------+----------------+--------------+
+; |Practice                        ; 201 (58)    ; 128          ; 0          ; 29   ; 0            ; 73 (20)      ; 18 (2)            ; 110 (36)         ; 32 (32)         ; 0 (0)      ; |Practice                                                               ; Practice       ; work         ;
+;    |D_FFp:dffg|                  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|D_FFp:dffg                                                    ; D_FFp          ; work         ;
+;    |DelayAdder:timecalc|         ; 25 (0)      ; 11           ; 0          ; 0    ; 0            ; 14 (0)       ; 10 (0)            ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc                                           ; DelayAdder     ; work         ;
+;       |D_FFp:\random:0:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:0:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:10:twox|    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:10:twox                     ; D_FFp          ; work         ;
+;       |D_FFp:\random:1:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:1:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:2:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:2:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:3:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:3:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:4:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:4:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:5:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:5:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:6:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:6:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:7:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:7:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:8:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:8:twox                      ; D_FFp          ; work         ;
+;       |D_FFp:\random:9:twox|     ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|D_FFp:\random:9:twox                      ; D_FFp          ; work         ;
+;       |elevenbitadder:add1|      ; 14 (0)      ; 0            ; 0          ; 0    ; 0            ; 14 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1                       ; elevenbitadder ; work         ;
+;          |onebitadder:oobbaad10| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad10 ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad11| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad11 ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad1|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad1  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad2|  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad2  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad3|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad3  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad4|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad4  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad5|  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad5  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad6|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad6  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad7|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad7  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad8|  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad8  ; onebitadder    ; work         ;
+;          |onebitadder:oobbaad9|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad9  ; onebitadder    ; work         ;
+;    |lcd_controller:display|      ; 54 (54)     ; 31           ; 0          ; 0    ; 0            ; 23 (23)      ; 6 (6)             ; 25 (25)          ; 0 (0)           ; 0 (0)      ; |Practice|lcd_controller:display                                        ; lcd_controller ; work         ;
+;    |modfive:mff|                 ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modfive:mff                                                   ; modfive        ; work         ;
+;       |D_FFn:dff0|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modfive:mff|D_FFn:dff0                                        ; D_FFn          ; work         ;
+;       |D_FFn:dff1|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modfive:mff|D_FFn:dff1                                        ; D_FFn          ; work         ;
+;       |D_FFn:dff2|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modfive:mff|D_FFn:dff2                                        ; D_FFn          ; work         ;
+;    |modten:\random:0:m10|        ; 4 (0)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:0:m10                                          ; modten         ; work         ;
+;       |modfive:mf|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:0:m10|modfive:mf                               ; modfive        ; work         ;
+;          |D_FFn:dff0|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:0:m10|modfive:mf|D_FFn:dff0                    ; D_FFn          ; work         ;
+;          |D_FFn:dff1|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:0:m10|modfive:mf|D_FFn:dff1                    ; D_FFn          ; work         ;
+;          |D_FFn:dff2|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:0:m10|modfive:mf|D_FFn:dff2                    ; D_FFn          ; work         ;
+;       |modtwo:mt|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:0:m10|modtwo:mt                                ; modtwo         ; work         ;
+;    |modten:\random:1:m10|        ; 4 (0)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:1:m10                                          ; modten         ; work         ;
+;       |modfive:mf|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:1:m10|modfive:mf                               ; modfive        ; work         ;
+;          |D_FFn:dff0|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:1:m10|modfive:mf|D_FFn:dff0                    ; D_FFn          ; work         ;
+;          |D_FFn:dff1|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:1:m10|modfive:mf|D_FFn:dff1                    ; D_FFn          ; work         ;
+;          |D_FFn:dff2|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:1:m10|modfive:mf|D_FFn:dff2                    ; D_FFn          ; work         ;
+;       |modtwo:mt|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:1:m10|modtwo:mt                                ; modtwo         ; work         ;
+;    |modten:\random:2:m10|        ; 4 (0)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:2:m10                                          ; modten         ; work         ;
+;       |modfive:mf|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:2:m10|modfive:mf                               ; modfive        ; work         ;
+;          |D_FFn:dff0|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:2:m10|modfive:mf|D_FFn:dff0                    ; D_FFn          ; work         ;
+;          |D_FFn:dff1|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:2:m10|modfive:mf|D_FFn:dff1                    ; D_FFn          ; work         ;
+;          |D_FFn:dff2|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:2:m10|modfive:mf|D_FFn:dff2                    ; D_FFn          ; work         ;
+;       |modtwo:mt|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:2:m10|modtwo:mt                                ; modtwo         ; work         ;
+;    |modten:\random:3:m10|        ; 4 (0)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:3:m10                                          ; modten         ; work         ;
+;       |modfive:mf|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:3:m10|modfive:mf                               ; modfive        ; work         ;
+;          |D_FFn:dff0|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:3:m10|modfive:mf|D_FFn:dff0                    ; D_FFn          ; work         ;
+;          |D_FFn:dff1|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:3:m10|modfive:mf|D_FFn:dff1                    ; D_FFn          ; work         ;
+;          |D_FFn:dff2|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:3:m10|modfive:mf|D_FFn:dff2                    ; D_FFn          ; work         ;
+;       |modtwo:mt|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:3:m10|modtwo:mt                                ; modtwo         ; work         ;
+;    |modten:\random:4:m10|        ; 4 (0)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:4:m10                                          ; modten         ; work         ;
+;       |modfive:mf|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:4:m10|modfive:mf                               ; modfive        ; work         ;
+;          |D_FFn:dff0|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:4:m10|modfive:mf|D_FFn:dff0                    ; D_FFn          ; work         ;
+;          |D_FFn:dff1|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:4:m10|modfive:mf|D_FFn:dff1                    ; D_FFn          ; work         ;
+;          |D_FFn:dff2|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:4:m10|modfive:mf|D_FFn:dff2                    ; D_FFn          ; work         ;
+;       |modtwo:mt|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:4:m10|modtwo:mt                                ; modtwo         ; work         ;
+;    |modten:\random:5:m10|        ; 4 (0)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:5:m10                                          ; modten         ; work         ;
+;       |modfive:mf|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:5:m10|modfive:mf                               ; modfive        ; work         ;
+;          |D_FFn:dff0|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:5:m10|modfive:mf|D_FFn:dff0                    ; D_FFn          ; work         ;
+;          |D_FFn:dff1|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:5:m10|modfive:mf|D_FFn:dff1                    ; D_FFn          ; work         ;
+;          |D_FFn:dff2|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:5:m10|modfive:mf|D_FFn:dff2                    ; D_FFn          ; work         ;
+;       |modtwo:mt|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:5:m10|modtwo:mt                                ; modtwo         ; work         ;
+;    |modten:\random:6:m10|        ; 4 (0)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:6:m10                                          ; modten         ; work         ;
+;       |modfive:mf|               ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:6:m10|modfive:mf                               ; modfive        ; work         ;
+;          |D_FFn:dff0|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:6:m10|modfive:mf|D_FFn:dff0                    ; D_FFn          ; work         ;
+;          |D_FFn:dff1|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:6:m10|modfive:mf|D_FFn:dff1                    ; D_FFn          ; work         ;
+;          |D_FFn:dff2|            ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:6:m10|modfive:mf|D_FFn:dff2                    ; D_FFn          ; work         ;
+;       |modtwo:mt|                ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|modten:\random:6:m10|modtwo:mt                                ; modtwo         ; work         ;
+;    |oneclock:ondded|             ; 32 (0)      ; 16           ; 0          ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 16 (0)           ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded                                               ; oneclock       ; work         ;
+;       |dbtwo:\Q1:0:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:0:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:0:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:10:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:10:dbtwox                           ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:10:dbtwox|D_FFn:D_FF1               ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:11:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:11:dbtwox                           ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:11:dbtwox|D_FFn:D_FF1               ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:12:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:12:dbtwox                           ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:12:dbtwox|D_FFn:D_FF1               ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:13:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:13:dbtwox                           ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:13:dbtwox|D_FFn:D_FF1               ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:14:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:14:dbtwox                           ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:14:dbtwox|D_FFn:D_FF1               ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:15:dbtwox|      ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:15:dbtwox                           ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:15:dbtwox|D_FFn:D_FF1               ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:1:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:1:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:1:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:2:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:2:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:2:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:3:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:3:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:3:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:4:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:4:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:4:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:5:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:5:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:5:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:6:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:6:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:6:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:7:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:7:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:7:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:8:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:8:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:8:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
+;       |dbtwo:\Q1:9:dbtwox|       ; 2 (1)       ; 1            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:9:dbtwox                            ; dbtwo          ; work         ;
+;          |D_FFn:D_FF1|           ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |Practice|oneclock:ondded|dbtwo:\Q1:9:dbtwox|D_FFn:D_FF1                ; D_FFn          ; work         ;
++----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Practice|lcd_controller:display|state                                                                                          ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; state.S11 ; state.S10 ; state.S9 ; state.S8 ; state.S7 ; state.S6 ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; state.S0  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.S2  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.S3  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.S4  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.S5  ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S6  ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S7  ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S8  ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S9  ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S10 ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.S11 ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++------------------------------------------+----------------------------------------------------+
+; Register name                            ; Reason for Removal                                 ;
++------------------------------------------+----------------------------------------------------+
+; erase                                    ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller:display|cmd_position[4,5] ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller:display|cmd_position[7]   ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller:display|data_dis[7]       ; Stuck at GND due to stuck port data_in             ;
+; write_column[2,3]                        ; Merged with write_row[0]                           ;
+; i[4]                                     ; Merged with write_row[0]                           ;
+; lcd_controller:display|cmd_position[3,6] ; Merged with lcd_controller:display|cmd_position[2] ;
+; write_row[0]                             ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller:display|cmd_position[2]   ; Stuck at GND due to stuck port data_in             ;
+; lcd_controller:display|lcd_rw            ; Stuck at GND due to stuck port data_in             ;
+; put_char                                 ; Stuck at VCC due to stuck port data_in             ;
+; lcd_controller:display|data_dis[5,6]     ; Merged with lcd_controller:display|data_dis[4]     ;
+; lcd_controller:display|state.S10         ; Lost fanout                                        ;
+; lcd_controller:display|state.S11         ; Lost fanout                                        ;
+; Total Number of Removed Registers = 18   ;                                                    ;
++------------------------------------------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                   ;
++---------------+---------------------------+-------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                            ;
++---------------+---------------------------+-------------------------------------------------------------------+
+; erase         ; Stuck at GND              ; lcd_controller:display|data_dis[7], lcd_controller:display|lcd_rw ;
+;               ; due to stuck port data_in ;                                                                   ;
+; write_row[0]  ; Stuck at GND              ; lcd_controller:display|cmd_position[2]                            ;
+;               ; due to stuck port data_in ;                                                                   ;
++---------------+---------------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 128   ;
+; Number of registers using Synchronous Clear  ; 36    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 59    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Practice|lcd_controller:display|count_cmd[1] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Practice|j[15]                               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Practice|write_column[0]                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Practice|i[2]                                ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Practice|lcd_controller:display|lcd[4]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller:display" ;
++---------------+-------+----------+-----------------+
+; Port          ; Type  ; Severity ; Details         ;
++---------------+-------+----------+-----------------+
+; write_data[7] ; Input ; Info     ; Stuck at GND    ;
++---------------+-------+----------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad11"                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad1" ;
++------+-------+----------+----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                        ;
++------+-------+----------+----------------------------------------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                                                   ;
++------+-------+----------+----------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "DelayAdder:timecalc|elevenbitadder:add1" ;
++----------+-------+----------+---------------------------------------+
+; Port     ; Type  ; Severity ; Details                               ;
++----------+-------+----------+---------------------------------------+
+; x[10..1] ; Input ; Info     ; Stuck at GND                          ;
++----------+-------+----------+---------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sat Apr 21 03:36:26 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Practice -c Practice
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 25 design units, including 12 entities, in source file Practice.vhdl
+    Info (12022): Found design unit 1: harsh File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 5
+    Info (12022): Found design unit 2: D_FFp-WhatDoYouCare File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 64
+    Info (12022): Found design unit 3: dbtwo-struct File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 85
+    Info (12022): Found design unit 4: oneclock-struct File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 103
+    Info (12022): Found design unit 5: D_FFn-WhatDoYouCare File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 122
+    Info (12022): Found design unit 6: modfive-paach File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 143
+    Info (12022): Found design unit 7: modtwo-do File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 167
+    Info (12022): Found design unit 8: Practice-fu File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 198
+    Info (12022): Found design unit 9: modten-fu File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 303
+    Info (12022): Found design unit 10: onebitadder-bbeeh File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 319
+    Info (12022): Found design unit 11: elevenbitadder-behave File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 348
+    Info (12022): Found design unit 12: DelayAdder-behave File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 375
+    Info (12022): Found design unit 13: lcd_controller-Behavioral File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 415
+    Info (12023): Found entity 1: D_FFp File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 61
+    Info (12023): Found entity 2: dbtwo File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 82
+    Info (12023): Found entity 3: oneclock File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 100
+    Info (12023): Found entity 4: D_FFn File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 119
+    Info (12023): Found entity 5: modfive File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 140
+    Info (12023): Found entity 6: modtwo File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 164
+    Info (12023): Found entity 7: Practice File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 188
+    Info (12023): Found entity 8: modten File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 300
+    Info (12023): Found entity 9: onebitadder File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 316
+    Info (12023): Found entity 10: elevenbitadder File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 344
+    Info (12023): Found entity 11: DelayAdder File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 371
+    Info (12023): Found entity 12: lcd_controller File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 397
+Info (12127): Elaborating entity "Practice" for the top level hierarchy
+Info (12128): Elaborating entity "D_FFp" for hierarchy "D_FFp:dffg" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 216
+Info (12128): Elaborating entity "modten" for hierarchy "modten:\random:0:m10" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 222
+Info (12128): Elaborating entity "modfive" for hierarchy "modten:\random:0:m10|modfive:mf" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 306
+Info (12128): Elaborating entity "D_FFn" for hierarchy "modten:\random:0:m10|modfive:mf|D_FFn:dff0" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 146
+Info (12128): Elaborating entity "modtwo" for hierarchy "modten:\random:0:m10|modtwo:mt" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 307
+Info (12128): Elaborating entity "DelayAdder" for hierarchy "DelayAdder:timecalc" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 229
+Info (12128): Elaborating entity "elevenbitadder" for hierarchy "DelayAdder:timecalc|elevenbitadder:add1" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 387
+Warning (10036): Verilog HDL or VHDL warning at Practice.vhdl(349): object "c11" assigned a value but never read File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 349
+Info (12128): Elaborating entity "onebitadder" for hierarchy "DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad1" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 351
+Info (12128): Elaborating entity "oneclock" for hierarchy "oneclock:ondded" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 234
+Info (12128): Elaborating entity "dbtwo" for hierarchy "oneclock:ondded|dbtwo:\Q1:0:dbtwox" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 108
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:display" File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 237
+Warning (10036): Verilog HDL or VHDL warning at Practice.vhdl(423): object "count_next_data" assigned a value but never read File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 423
+Warning (10036): Verilog HDL or VHDL warning at Practice.vhdl(424): object "count_next_data1" assigned a value but never read File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 424
+Warning (10036): Verilog HDL or VHDL warning at Practice.vhdl(425): object "cmd_line_next" assigned a value but never read File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 425
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 190
+    Warning (13410): Pin "b11" is stuck at VCC File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 194
+    Warning (13410): Pin "b12" is stuck at GND File: /home/harsh/Desktop/Endsem/Practice.vhdl Line: 195
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 230 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 25 output pins
+    Info (21061): Implemented 201 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 944 megabytes
+    Info: Processing ended: Sat Apr 21 03:36:42 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:39
+
+

@@ -1,0 +1,1136 @@
+|Practice
+switch1 => D_FFp:dffg.CLK
+inclk => modten:random:0:m10.inclk
+inclk => oneclock:ondded.inclk
+reset => D_FFp:dffg.reset
+reset => modten:random:0:m10.reset
+reset => modten:random:1:m10.reset
+reset => modten:random:2:m10.reset
+reset => modten:random:3:m10.reset
+reset => modten:random:4:m10.reset
+reset => modten:random:5:m10.reset
+reset => modten:random:6:m10.reset
+reset => modfive:mff.reset
+reset => DelayAdder:timecalc.reset
+reset => oneclock:ondded.reset
+lcdreset => lcd_controller:display.rst
+z1[0] <= DelayAdder:timecalc.z[0]
+z1[1] <= DelayAdder:timecalc.z[1]
+z1[2] <= DelayAdder:timecalc.z[2]
+z1[3] <= DelayAdder:timecalc.z[3]
+z1[4] <= DelayAdder:timecalc.z[4]
+z1[5] <= DelayAdder:timecalc.z[5]
+z1[6] <= DelayAdder:timecalc.z[6]
+z1[7] <= DelayAdder:timecalc.z[7]
+z1[8] <= DelayAdder:timecalc.z[8]
+z1[9] <= DelayAdder:timecalc.z[9]
+z1[10] <= DelayAdder:timecalc.z[10]
+lcd_rw <= lcd_controller:display.lcd_rw
+lcd_en <= lcd_controller:display.lcd_en
+lcd_rs <= lcd_controller:display.lcd_rs
+lcd1[0] <= lcd_controller:display.lcd1[0]
+lcd1[1] <= lcd_controller:display.lcd1[1]
+lcd1[2] <= lcd_controller:display.lcd1[2]
+lcd1[3] <= lcd_controller:display.lcd1[3]
+lcd1[4] <= lcd_controller:display.lcd1[4]
+lcd1[5] <= lcd_controller:display.lcd1[5]
+lcd1[6] <= lcd_controller:display.lcd1[6]
+lcd1[7] <= lcd_controller:display.lcd1[7]
+b11 <= lcd_controller:display.b11
+b12 <= lcd_controller:display.b12
+go <= D_FFp:dffg.Q
+
+
+|Practice|D_FFp:dffg
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:0:m10
+inclk => modfive:mf.inclk
+reset => modfive:mf.reset
+reset => modtwo:mt.reset
+outclk <= modtwo:mt.clkout
+
+
+|Practice|modten:\random:0:m10|modfive:mf
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modten:\random:0:m10|modfive:mf|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:0:m10|modfive:mf|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:0:m10|modfive:mf|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:0:m10|modtwo:mt
+inclk => outclk.CLK
+reset => outclk.ACLR
+clkout <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:1:m10
+inclk => modfive:mf.inclk
+reset => modfive:mf.reset
+reset => modtwo:mt.reset
+outclk <= modtwo:mt.clkout
+
+
+|Practice|modten:\random:1:m10|modfive:mf
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modten:\random:1:m10|modfive:mf|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:1:m10|modfive:mf|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:1:m10|modfive:mf|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:1:m10|modtwo:mt
+inclk => outclk.CLK
+reset => outclk.ACLR
+clkout <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:2:m10
+inclk => modfive:mf.inclk
+reset => modfive:mf.reset
+reset => modtwo:mt.reset
+outclk <= modtwo:mt.clkout
+
+
+|Practice|modten:\random:2:m10|modfive:mf
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modten:\random:2:m10|modfive:mf|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:2:m10|modfive:mf|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:2:m10|modfive:mf|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:2:m10|modtwo:mt
+inclk => outclk.CLK
+reset => outclk.ACLR
+clkout <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:3:m10
+inclk => modfive:mf.inclk
+reset => modfive:mf.reset
+reset => modtwo:mt.reset
+outclk <= modtwo:mt.clkout
+
+
+|Practice|modten:\random:3:m10|modfive:mf
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modten:\random:3:m10|modfive:mf|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:3:m10|modfive:mf|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:3:m10|modfive:mf|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:3:m10|modtwo:mt
+inclk => outclk.CLK
+reset => outclk.ACLR
+clkout <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:4:m10
+inclk => modfive:mf.inclk
+reset => modfive:mf.reset
+reset => modtwo:mt.reset
+outclk <= modtwo:mt.clkout
+
+
+|Practice|modten:\random:4:m10|modfive:mf
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modten:\random:4:m10|modfive:mf|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:4:m10|modfive:mf|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:4:m10|modfive:mf|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:4:m10|modtwo:mt
+inclk => outclk.CLK
+reset => outclk.ACLR
+clkout <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:5:m10
+inclk => modfive:mf.inclk
+reset => modfive:mf.reset
+reset => modtwo:mt.reset
+outclk <= modtwo:mt.clkout
+
+
+|Practice|modten:\random:5:m10|modfive:mf
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modten:\random:5:m10|modfive:mf|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:5:m10|modfive:mf|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:5:m10|modfive:mf|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:5:m10|modtwo:mt
+inclk => outclk.CLK
+reset => outclk.ACLR
+clkout <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:6:m10
+inclk => modfive:mf.inclk
+reset => modfive:mf.reset
+reset => modtwo:mt.reset
+outclk <= modtwo:mt.clkout
+
+
+|Practice|modten:\random:6:m10|modfive:mf
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modten:\random:6:m10|modfive:mf|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:6:m10|modfive:mf|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:6:m10|modfive:mf|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modten:\random:6:m10|modtwo:mt
+inclk => outclk.CLK
+reset => outclk.ACLR
+clkout <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modfive:mff
+inclk => D_FFn:dff0.CLK
+inclk => D_FFn:dff1.CLK
+inclk => D_FFn:dff2.CLK
+reset => D_FFn:dff0.reset
+reset => D_FFn:dff1.reset
+reset => D_FFn:dff2.reset
+outclk <= D_FFn:dff2.Q
+
+
+|Practice|modfive:mff|D_FFn:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modfive:mff|D_FFn:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|modfive:mff|D_FFn:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc
+clk => D_FFp:random:0:twox.CLK
+clk => D_FFp:random:1:twox.CLK
+clk => D_FFp:random:2:twox.CLK
+clk => D_FFp:random:3:twox.CLK
+clk => D_FFp:random:4:twox.CLK
+clk => D_FFp:random:5:twox.CLK
+clk => D_FFp:random:6:twox.CLK
+clk => D_FFp:random:7:twox.CLK
+clk => D_FFp:random:8:twox.CLK
+clk => D_FFp:random:9:twox.CLK
+clk => D_FFp:random:10:twox.CLK
+reset => D_FFp:random:0:twox.reset
+reset => D_FFp:random:1:twox.reset
+reset => D_FFp:random:2:twox.reset
+reset => D_FFp:random:3:twox.reset
+reset => D_FFp:random:4:twox.reset
+reset => D_FFp:random:5:twox.reset
+reset => D_FFp:random:6:twox.reset
+reset => D_FFp:random:7:twox.reset
+reset => D_FFp:random:8:twox.reset
+reset => D_FFp:random:9:twox.reset
+reset => D_FFp:random:10:twox.reset
+reset => elevenbitadder:add1.x[0]
+z[0] <= elevenbitadder:add1.z[0]
+z[1] <= elevenbitadder:add1.z[1]
+z[2] <= elevenbitadder:add1.z[2]
+z[3] <= elevenbitadder:add1.z[3]
+z[4] <= elevenbitadder:add1.z[4]
+z[5] <= elevenbitadder:add1.z[5]
+z[6] <= elevenbitadder:add1.z[6]
+z[7] <= elevenbitadder:add1.z[7]
+z[8] <= elevenbitadder:add1.z[8]
+z[9] <= elevenbitadder:add1.z[9]
+z[10] <= elevenbitadder:add1.z[10]
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:0:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:1:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:2:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:3:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:4:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:5:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:6:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:7:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:8:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:9:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|D_FFp:\random:10:twox
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1
+x[0] => onebitadder:oobbaad1.x
+x[1] => onebitadder:oobbaad2.x
+x[2] => onebitadder:oobbaad3.x
+x[3] => onebitadder:oobbaad4.x
+x[4] => onebitadder:oobbaad5.x
+x[5] => onebitadder:oobbaad6.x
+x[6] => onebitadder:oobbaad7.x
+x[7] => onebitadder:oobbaad8.x
+x[8] => onebitadder:oobbaad9.x
+x[9] => onebitadder:oobbaad10.x
+x[10] => onebitadder:oobbaad11.x
+y[0] => onebitadder:oobbaad1.y
+y[1] => onebitadder:oobbaad2.y
+y[2] => onebitadder:oobbaad3.y
+y[3] => onebitadder:oobbaad4.y
+y[4] => onebitadder:oobbaad5.y
+y[5] => onebitadder:oobbaad6.y
+y[6] => onebitadder:oobbaad7.y
+y[7] => onebitadder:oobbaad8.y
+y[8] => onebitadder:oobbaad9.y
+y[9] => onebitadder:oobbaad10.y
+y[10] => onebitadder:oobbaad11.y
+z[0] <= onebitadder:oobbaad1.s
+z[1] <= onebitadder:oobbaad2.s
+z[2] <= onebitadder:oobbaad3.s
+z[3] <= onebitadder:oobbaad4.s
+z[4] <= onebitadder:oobbaad5.s
+z[5] <= onebitadder:oobbaad6.s
+z[6] <= onebitadder:oobbaad7.s
+z[7] <= onebitadder:oobbaad8.s
+z[8] <= onebitadder:oobbaad9.s
+z[9] <= onebitadder:oobbaad10.s
+z[10] <= onebitadder:oobbaad11.s
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad1
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad2
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad3
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad4
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad5
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad6
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad7
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad8
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad9
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad10
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|DelayAdder:timecalc|elevenbitadder:add1|onebitadder:oobbaad11
+x => ss.IN0
+x => cc1.IN0
+x => cc2.IN0
+y => ss.IN1
+y => cc1.IN1
+y => cc3.IN0
+cin => s.IN1
+cin => cc2.IN1
+cin => cc3.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded
+inclk => dbtwo:Q1:0:dbtwox.inclk
+reset => dbtwo:Q1:0:dbtwox.reset
+reset => dbtwo:Q1:1:dbtwox.reset
+reset => dbtwo:Q1:2:dbtwox.reset
+reset => dbtwo:Q1:3:dbtwox.reset
+reset => dbtwo:Q1:4:dbtwox.reset
+reset => dbtwo:Q1:5:dbtwox.reset
+reset => dbtwo:Q1:6:dbtwox.reset
+reset => dbtwo:Q1:7:dbtwox.reset
+reset => dbtwo:Q1:8:dbtwox.reset
+reset => dbtwo:Q1:9:dbtwox.reset
+reset => dbtwo:Q1:10:dbtwox.reset
+reset => dbtwo:Q1:11:dbtwox.reset
+reset => dbtwo:Q1:12:dbtwox.reset
+reset => dbtwo:Q1:13:dbtwox.reset
+reset => dbtwo:Q1:14:dbtwox.reset
+reset => dbtwo:Q1:15:dbtwox.reset
+outclk <= dbtwo:Q1:15:dbtwox.outclk
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:0:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:0:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:1:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:1:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:2:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:2:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:3:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:3:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:4:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:4:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:5:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:5:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:6:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:6:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:7:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:7:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:8:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:8:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:9:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:9:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:10:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:10:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:11:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:11:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:12:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:12:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:13:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:13:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:14:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:14:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:15:dbtwox
+inclk => D_FFn:D_FF1.CLK
+reset => D_FFn:D_FF1.reset
+reset => nq.IN1
+reset => outclk.IN1
+outclk <= outclk.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|oneclock:ondded|dbtwo:\Q1:15:dbtwox|D_FFn:D_FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Practice|lcd_controller:display
+clk => data_dis[0].CLK
+clk => data_dis[1].CLK
+clk => data_dis[2].CLK
+clk => data_dis[3].CLK
+clk => data_dis[4].CLK
+clk => data_dis[5].CLK
+clk => data_dis[6].CLK
+clk => data_dis[7].CLK
+clk => lcd_en~reg0.CLK
+clk => lcd_rw~reg0.CLK
+clk => lcd_rs~reg0.CLK
+clk => lcd[0].CLK
+clk => lcd[1].CLK
+clk => lcd[2].CLK
+clk => lcd[3].CLK
+clk => lcd[4].CLK
+clk => lcd[5].CLK
+clk => lcd[6].CLK
+clk => lcd[7].CLK
+clk => ack~reg0.CLK
+clk => count_cmd[0].CLK
+clk => count_cmd[1].CLK
+clk => count_cmd[2].CLK
+clk => cmd_position[0].CLK
+clk => cmd_position[1].CLK
+clk => cmd_position[2].CLK
+clk => cmd_position[3].CLK
+clk => cmd_position[4].CLK
+clk => cmd_position[5].CLK
+clk => cmd_position[6].CLK
+clk => cmd_position[7].CLK
+clk => state~13.DATAIN
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => state.OUTPUTSELECT
+rst => count_cmd.OUTPUTSELECT
+rst => count_cmd.OUTPUTSELECT
+rst => count_cmd.OUTPUTSELECT
+rst => ack.OUTPUTSELECT
+rst => data_dis[5].ENA
+rst => data_dis[4].ENA
+rst => data_dis[3].ENA
+rst => data_dis[2].ENA
+rst => data_dis[1].ENA
+rst => data_dis[0].ENA
+rst => data_dis[6].ENA
+rst => data_dis[7].ENA
+rst => lcd_en~reg0.ENA
+rst => lcd_rw~reg0.ENA
+rst => lcd_rs~reg0.ENA
+rst => lcd[0].ENA
+rst => lcd[1].ENA
+rst => lcd[2].ENA
+rst => lcd[3].ENA
+rst => lcd[4].ENA
+rst => lcd[5].ENA
+rst => lcd[6].ENA
+rst => lcd[7].ENA
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => data_dis.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd.OUTPUTSELECT
+erase => lcd_rs.OUTPUTSELECT
+erase => lcd_rw.OUTPUTSELECT
+erase => lcd_en.OUTPUTSELECT
+erase => ack.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => state.OUTPUTSELECT
+erase => process_1.IN0
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => data_dis.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd.OUTPUTSELECT
+put_char => lcd_rs.OUTPUTSELECT
+put_char => lcd_rw.OUTPUTSELECT
+put_char => lcd_en.OUTPUTSELECT
+put_char => ack.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => state.OUTPUTSELECT
+put_char => process_1.IN1
+write_data[0] => data_dis.DATAB
+write_data[1] => data_dis.DATAB
+write_data[2] => data_dis.DATAB
+write_data[3] => data_dis.DATAB
+write_data[4] => data_dis.DATAB
+write_data[5] => data_dis.DATAB
+write_data[6] => data_dis.DATAB
+write_data[7] => data_dis.DATAB
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_row[0] => cmd_position.OUTPUTSELECT
+write_column[0] => cmd_position.DATAB
+write_column[0] => cmd_position.DATAB
+write_column[1] => cmd_position.DATAB
+write_column[1] => cmd_position.DATAB
+write_column[2] => cmd_position.DATAB
+write_column[2] => cmd_position.DATAB
+write_column[3] => cmd_position.DATAB
+write_column[3] => cmd_position.DATAB
+ack <= ack~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd_rw <= lcd_rw~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd_en <= lcd_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd_rs <= lcd_rs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lcd1[0] <= lcd[0].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[1] <= lcd[1].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[2] <= lcd[2].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[3] <= lcd[3].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[4] <= lcd[4].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[5] <= lcd[5].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[6] <= lcd[6].DB_MAX_OUTPUT_PORT_TYPE
+lcd1[7] <= lcd[7].DB_MAX_OUTPUT_PORT_TYPE
+b11 <= <VCC>
+b12 <= <GND>
+
+
